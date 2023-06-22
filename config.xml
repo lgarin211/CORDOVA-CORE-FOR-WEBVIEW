@@ -12,4 +12,5 @@
     <allow-navigation href="https://demortb.lahoras.my.id/*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <icon src="res/icon.png" />
 </widget>
