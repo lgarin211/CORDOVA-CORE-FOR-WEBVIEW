@@ -1,0 +1,60 @@
+workflows:
+  cordova-android:
+    name: Cordova Android Workflow
+    environment:
+      node: latest
+      # java: latest
+      # android: latest
+    scripts:
+      - name: Install Dependencies
+        script: |
+          npm install
+          npm ci
+          curl -s "https://get.sdkman.io" | bash
+          source "$HOME/.sdkman/bin/sdkman-init.sh"
+          sdk install java 8.0.352-amzn
+          sdk install gradle
+
+
+      - name: Add Android Platform
+        script: |
+          cordova prepare
+          cordova platform add android
+      - name: Build APK
+        script: |
+          cordova build android
+      # - name: Sign APK
+      #   script: |
+      #     jarsigner \
+      #       -sigalg SHA1withRSA \
+      #       -digestalg SHA1 \
+      #       -keystore $CM_KEYSTORE_PATH \
+      #       -storepass $CM_KEYSTORE_PASSWORD \
+      #       -keypass $CM_KEY_PASSWORD \
+      #       platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk \
+      #       $CM_KEY_ALIAS
+      #     $ANDROID_HOME/build-tools/30.0.3/zipalign \
+      #       -v 4 \
+      #       platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk \
+      #       app-release.apk
+      - name: Upload APK
+        # script: |
+        #   cp -f /Users/builder/clone/platforms/android/app/build/outputs/apk/debug/app-debug.apk /Users/builder/clone/
+        #   # gh auth login --with-token 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 
+        #   # git add .
+        #   # git commit -m "Added configuration changes"
+        #   # git push
+        #   echo "Deploying app to Codemagic..."
+        #   curl -v -X POST \
+        #     -F "file=/Users/builder/clone/platforms/android/app/build/outputs/apk/debug/app-debug.apk" \
+        #     -H "x-auth-token: _DhglVXCrmkGEuyzGv8KTSV0KCVnSHXwXFAdG87ccrY" \
+        #     -H "content-type: multipart/form-data" \
+        #     https://api.codemagic.io/artifacts/upload
+    artifacts:
+      - /Users/builder/clone/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+    publishing: 
+      email:
+        recipients:
+          - lagustinus211@gmail.com
+          - louwissteffo@gmail.com
+          - alvina.manggar@gmail.com

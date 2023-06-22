@@ -7,7 +7,8 @@
     <title>Document</title>
     <style>
         body {
-            min-height: 100vh;
+            height: 100vh;
+            width: 100vw;
             font-family: Roboto, Arial;
             color: #ADAFB6;
             display: flex;
@@ -39,8 +40,6 @@
             transform-style: preserve-3d;
         }
 
-
-
         .boxes .box:nth-child(1) {
             -webkit-transform: translate(100%, 0);
             transform: translate(100%, 0);
@@ -69,17 +68,15 @@
             animation: box4 1s linear infinite;
         }
 
-
-
         .boxes .box>div {
-            background: #5C8DF6;
+            background: #f6765c;
             --translateZ: 15.5px;
             --rotateY: 0deg;
             --rotateX: 0deg;
             position: absolute;
             width: 100%;
             height: 100%;
-            background: #5C8DF6;
+            background: #a6f65c;
             top: auto;
             right: auto;
             bottom: auto;
@@ -91,17 +88,17 @@
         .boxes .box>div:nth-child(1) {
             top: 0;
             left: 0;
-            background: #5C8DF6;
+            background: #f6dc5c;
         }
 
         .boxes .box>div:nth-child(2) {
-            background: #145af2;
+            background: #5af214;
             right: 0;
             --rotateY: 90deg;
         }
 
         .boxes .box>div:nth-child(3) {
-            background: #447cf5;
+            background: #44e0f5;
             --rotateX: -90deg;
         }
 
@@ -112,17 +109,11 @@
             --translateZ: -90px;
         }
 
-
-
-
-
         @keyframes box1 {
-
             0%,
             50% {
                 transform: translate(100%, 0);
             }
-
             100% {
                 transform: translate(200%, 0);
             }
@@ -132,23 +123,19 @@
             0% {
                 transform: translate(0, 100%);
             }
-
             50% {
                 transform: translate(0, 0);
             }
-
             100% {
                 transform: translate(100%, 0);
             }
         }
 
         @keyframes box3 {
-
             0%,
             50% {
                 transform: translate(100%, 100%);
             }
-
             100% {
                 transform: translate(0, 100%);
             }
@@ -158,11 +145,9 @@
             0% {
                 transform: translate(200%, 0);
             }
-
             50% {
                 transform: translate(200%, 100%);
             }
-
             100% {
                 transform: translate(100%, 100%);
             }
@@ -171,7 +156,7 @@
 </head>
 
 <body>
-    <h1 id="cot">...</h1>
+    <h3 id="cot">...</h3>
     <div class="boxes">
         <div class="box">
             <div></div>
