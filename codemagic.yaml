@@ -37,7 +37,7 @@ workflows:
       #       -v 4 \
       #       platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk \
       #       app-release.apk
-      - name: Upload APK
+      # - name: Upload APK
         # script: |
         #   cp -f /Users/builder/clone/platforms/android/app/build/outputs/apk/debug/app-debug.apk /Users/builder/clone/
         #   # gh auth login --with-token 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 
@@ -56,5 +56,5 @@ workflows:
       email:
         recipients:
           - lagustinus211@gmail.com
-          - louwissteffo@gmail.com
-          - alvina.manggar@gmail.com
+          # - louwissteffo@gmail.com
+          # - alvina.manggar@gmail.com
