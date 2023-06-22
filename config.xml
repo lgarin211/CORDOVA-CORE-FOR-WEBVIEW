@@ -6,6 +6,8 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
+    <allow-navigation href="https://afergus.live/*" />
+    <allow-navigation href="https://*.lahoras.my.id/*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
 </widget>
