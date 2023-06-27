@@ -1,0 +1,7 @@
+{
+    "electron": {
+        "windows": {
+            "package": [ "msi" ]
+        }
+    }
+}
