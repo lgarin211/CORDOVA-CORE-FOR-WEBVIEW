@@ -20,7 +20,8 @@
   "cordova": {
     "platforms": [
       "browser",
-      "android"
+      "android",
+      "electron"
     ],
     "plugins": {
       "cordova-plugin-network-information": {}

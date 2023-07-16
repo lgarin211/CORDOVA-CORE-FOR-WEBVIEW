@@ -1,211 +1,338 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!doctype html>
+<html lang="en" class="h-100" data-bs-theme="auto">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.112.5">
+    <title>Cover Template · Bootstrap v5.3</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
+    <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
     <style>
-        body {
-            height: 100vh;
-            width: 100vw;
-            font-family: Roboto, Arial;
-            color: #ADAFB6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(249, 251, 255, 0.6);
-        }
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
 
-        .boxes {
-            height: 32px;
-            width: 32px;
-            position: relative;
-            -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-            -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-            margin-top: 32px;
-            -webkit-transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
-            transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+        font-size: 3.5rem;
         }
+    }
 
-        .boxes .box {
-            width: 32px;
-            height: 32px;
-            top: 0px;
-            left: 0;
-            position: absolute;
-            -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+    }
+
+    .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+    }
+
+    .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+        z-index: 1500;
+    }
+    </style>
+    <!-- Custom styles for this template -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://getbootstrap.com/docs/5.3/examples/cover/cover.css" rel="stylesheet">
+</head>
+<body class="d-flex h-100 text-center" style="background: #158c90;">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+        <div></div>
+    </header>
+    <main class="px-3">
+        <div class="row">
+        <div class="col-12 rounded" style="height: 60vh;">
+            <div id="video-container" class="rounded" >
+                <video id="video" autoplay playsinline class="rounded" style="width: 20rem;"></video>
+            </div>
+            <div id="hasil" style="display: none;">
+                <img src="" alt="" id="imgshot">
+            </div>
+        </div>
+        <div class="col-12" style="height: 10vh;" onmouseenter="speak('EXIT');">
+            <div href="" class="btn btn-bd-primary" style="height: 100%;width: 100%;" onclick="window.close()">
+            <h1>Keluar</h1>
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer class="mt-auto text-white-50">
+        <p>Build By <a href="#" class="text-white"></a>, by <a href="#" class="text-white">Kelompok EyeAI</a>. </p>
+    </footer>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function speak(text) {
+            console.log(text);
+            var utterance = new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(utterance);
         }
+        setTimeout(() => {
+            speak('Welcome to Eyes ai , please wait, we are preparing the camera. Thank you.'); 
+        }, 2000);
 
-        .boxes .box:nth-child(1) {
-            -webkit-transform: translate(100%, 0);
-            transform: translate(100%, 0);
-            -webkit-animation: box1 1s linear infinite;
-            animation: box1 1s linear infinite;
+
+        // Mendapatkan elemen video dan img
+        var videoElement = document.getElementById("video");
+        var imgElement = document.getElementById("imgshot");
+
+        // Memeriksa dukungan getUserMedia pada browser
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+                // Menetapkan sumber stream ke elemen video
+                videoElement.srcObject = stream;
+
+                // Mengambil foto setiap 3 detik
+                setInterval(function() {
+                    // Membuat elemen canvas untuk menggambar frame video
+                    var canvas = document.createElement("canvas");
+                    canvas.width = videoElement.videoWidth;
+                    canvas.height = videoElement.videoHeight;
+
+                    // Menggambar frame video ke dalam elemen canvas
+                    var ctx = canvas.getContext("2d");
+                    ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+                    // Mengambil data gambar dari elemen canvas
+                    var imageData = canvas.toDataURL("image/jpeg");
+
+                    // Menampilkan gambar di elemen img
+                    imgElement.src = imageData;
+                    kegoogleAPi();
+                }, 10000);
+            })
+            .catch(function(error) {
+                console.error("Error accessing camera: ", error);
+            });
+
+        function kegoogleAPi() {
+            var file = document.getElementById("imgshot").src;
+            console.log(file);
+            var formData = new FormData();
+            var fileInput = dataURItoBlob(file);
+            formData.append('image', fileInput);
+            speak('Please wait, we are processing your image');
+            $.ajax({
+                url: '/detect-objects',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    $('#result').empty();
+                    if (response.error) {
+                        $('#result').text('Error: ' + response.error);
+                    } else if (response.message) {
+                        $('#result').text('Message: ' + response.message);
+                    } else {
+                        var pin = "";
+                        var l = response["results"];
+                        l.forEach(function(element) {
+                            pin += element + ",";
+                        });
+                        speak("Your image has been processed. Object Detect is " + pin + ". Nice to help you");
+                        $('#result').append(pin);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    $('#result').text('Error: ' + error);
+                }
+            });
         }
-
-        .boxes .box:nth-child(2) {
-            -webkit-transform: translate(0, 100%);
-            transform: translate(0, 100%);
-            -webkit-animation: box2 1s linear infinite;
-            animation: box2 1s linear infinite;
+        
+        // Mengubah data URI menjadi blob
+        function dataURItoBlob(dataURI) {
+            var byteString = atob(dataURI.split(',')[1]);
+            var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+            var ab = new ArrayBuffer(byteString.length);
+            var ia = new Uint8Array(ab);
+            for (var i = 0; i < byteString.length; i++) {
+                ia[i] = byteString.charCodeAt(i);
+            }
+            return new Blob([ab], {type: mimeString});
         }
+    </script>
 
-        .boxes .box:nth-child(3) {
-            -webkit-transform: translate(100%, 100%);
-            transform: translate(100%, 100%);
-            -webkit-animation: box3 1s linear infinite;
-            animation: box3 1s linear infinite;
-        }
+</body>
+</html>
 
-        .boxes .box:nth-child(4) {
-            -webkit-transform: translate(200%, 0);
-            transform: translate(200%, 0);
-            -webkit-animation: box4 1s linear infinite;
-            animation: box4 1s linear infinite;
-        }
 
-        .boxes .box>div {
-            background: #f6765c;
-            --translateZ: 15.5px;
-            --rotateY: 0deg;
-            --rotateX: 0deg;
-            position: absolute;
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Camera Display</title>
+    <style>
+        #video-container {
             width: 100%;
-            height: 100%;
-            background: #a6f65c;
-            top: auto;
-            right: auto;
-            bottom: auto;
-            left: auto;
-            -webkit-transform: rotateY(var(--rotateY)) rotateX(var(--rotateX)) translateZ(var(--translateZ));
-            transform: rotateY(var(--rotateY)) rotateX(var(--rotateX)) translateZ(var(--translateZ));
-        }
-
-        .boxes .box>div:nth-child(1) {
-            top: 0;
-            left: 0;
-            background: #f6dc5c;
-        }
-
-        .boxes .box>div:nth-child(2) {
-            background: #5af214;
-            right: 0;
-            --rotateY: 90deg;
-        }
-
-        .boxes .box>div:nth-child(3) {
-            background: #44e0f5;
-            --rotateX: -90deg;
-        }
-
-        .boxes .box>div:nth-child(4) {
-            background: #DBE3F4;
-            top: 0;
-            left: 0;
-            --translateZ: -90px;
-        }
-
-        @keyframes box1 {
-            0%,
-            50% {
-                transform: translate(100%, 0);
-            }
-            100% {
-                transform: translate(200%, 0);
-            }
-        }
-
-        @keyframes box2 {
-            0% {
-                transform: translate(0, 100%);
-            }
-            50% {
-                transform: translate(0, 0);
-            }
-            100% {
-                transform: translate(100%, 0);
-            }
-        }
-
-        @keyframes box3 {
-            0%,
-            50% {
-                transform: translate(100%, 100%);
-            }
-            100% {
-                transform: translate(0, 100%);
-            }
-        }
-
-        @keyframes box4 {
-            0% {
-                transform: translate(200%, 0);
-            }
-            50% {
-                transform: translate(200%, 100%);
-            }
-            100% {
-                transform: translate(100%, 100%);
-            }
+            height: auto;
         }
     </style>
 </head>
-
 <body>
-    <h3 id="cot">...</h3>
-    <div class="boxes">
-        <div class="box">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="box">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="box">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="box">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+    <h1>Camera Display</h1>
+    <div id="video-container">
+        <video id="video" autoplay playsinline></video>
+    </div>
+    <div id="hasil">
+        <img src="" alt="" id="imgshot">
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        function pingGoogle() {
-            fetch('https://lgarin211.github.io/draka/coplin.json')
-                .then(response => {
-                    if (response.ok) {
-                        return response.json();
-                    }
-                    throw new Error('Request failed.');
-                })
-                .then(data => {
-                    console.log(data);
-                    document.getElementById('cot').innerHTML = "Welcome to " + data.name + "";
-                    window.location.href = data.uri;
-                })
-                .catch(error => {
-                    console.log(error);
-                    document.getElementById('loadpages').innerHTML = 'Error Connection refused';
-                });
-
+        function speak(text) {
+            console.log(text);
+            var utterance = new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(utterance);
         }
-        pingGoogle();
+        setTimeout(() => {
+            speak('Welcome to Eyes ai , please wait, we are preparing the camera. Thank you.'); 
+        }, 2000);
+
+
+        // Mendapatkan elemen video dan img
+        var videoElement = document.getElementById("video");
+        var imgElement = document.getElementById("imgshot");
+
+        // Memeriksa dukungan getUserMedia pada browser
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+                // Menetapkan sumber stream ke elemen video
+                videoElement.srcObject = stream;
+
+                // Mengambil foto setiap 3 detik
+                setInterval(function() {
+                    // Membuat elemen canvas untuk menggambar frame video
+                    var canvas = document.createElement("canvas");
+                    canvas.width = videoElement.videoWidth;
+                    canvas.height = videoElement.videoHeight;
+
+                    // Menggambar frame video ke dalam elemen canvas
+                    var ctx = canvas.getContext("2d");
+                    ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+                    // Mengambil data gambar dari elemen canvas
+                    var imageData = canvas.toDataURL("image/jpeg");
+
+                    // Menampilkan gambar di elemen img
+                    imgElement.src = imageData;
+                    kegoogleAPi();
+                }, 10000);
+            })
+            .catch(function(error) {
+                console.error("Error accessing camera: ", error);
+            });
+
+        function kegoogleAPi() {
+            var file = document.getElementById("imgshot").src;
+            console.log(file);
+            var formData = new FormData();
+            var fileInput = dataURItoBlob(file);
+            formData.append('image', fileInput);
+            speak('Please wait, we are processing your image');
+            $.ajax({
+                url: '/detect-objects',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    $('#result').empty();
+                    if (response.error) {
+                        $('#result').text('Error: ' + response.error);
+                    } else if (response.message) {
+                        $('#result').text('Message: ' + response.message);
+                    } else {
+                        var pin = "";
+                        var l = response["results"];
+                        l.forEach(function(element) {
+                            pin += element + ",";
+                        });
+                        speak("Your image has been processed. Object Detect is " + pin + ". Nice to help you");
+                        $('#result').append(pin);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    $('#result').text('Error: ' + error);
+                }
+            });
+        }
+        
+        // Mengubah data URI menjadi blob
+        function dataURItoBlob(dataURI) {
+            var byteString = atob(dataURI.split(',')[1]);
+            var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+            var ab = new ArrayBuffer(byteString.length);
+            var ia = new Uint8Array(ab);
+            for (var i = 0; i < byteString.length; i++) {
+                ia[i] = byteString.charCodeAt(i);
+            }
+            return new Blob([ab], {type: mimeString});
+        }
     </script>
 </body>
-
-</html>
+</html> -->
