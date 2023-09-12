@@ -45,4 +45,8 @@ workflows:
             -H "content-type: multipart/form-data" \
             https://api.codemagic.io/artifacts/upload
     artifacts:
-      - app-release.apk
+       - /Users/builder/clone/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+       publishing: 
+      email:
+        recipients:
+          - lagustinus211@gmail.com
