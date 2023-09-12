@@ -23,7 +23,7 @@ workflows:
       #    cordova platform add electron
       - name: Build APK
         script: |
-      #    cordova build android
+          cordova build android
 
       # - name: Sign APK
       #   script: |
