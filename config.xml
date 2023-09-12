@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.lgarin211.CoreView" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>CoreView</name>
-    <description>Sample Cordova for Web View</description>
+    <name>BCD MOBILE</name>
+    <description>APLIKASI BCD MOBILE</description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
         Apache Cordova Team
     </author>
