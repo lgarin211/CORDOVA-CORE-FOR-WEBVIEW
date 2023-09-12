@@ -46,7 +46,7 @@ workflows:
             https://api.codemagic.io/artifacts/upload
     artifacts:
        - /Users/builder/clone/platforms/android/app/build/outputs/apk/debug/app-debug.apk
-       publishing: 
+    publishing: 
       email:
         recipients:
           - lagustinus211@gmail.com
