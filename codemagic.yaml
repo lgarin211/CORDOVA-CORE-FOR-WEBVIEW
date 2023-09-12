@@ -20,11 +20,9 @@ workflows:
         script: |
           cordova prepare
           cordova platform add android
-      #    cordova platform add electron
       - name: Build APK
         script: |
           cordova build android
-
       # - name: Sign APK
       #   script: |
       #     jarsigner \
