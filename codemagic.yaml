@@ -1,6 +1,6 @@
 workflows:
   cordova-android:
-    name: Cordova Android Workflow
+    name: Cordova Android Workflow by hci
     environment:
       node: latest
       # java: latest
@@ -18,7 +18,6 @@ workflows:
 
       - name: Add Android Platform
         script: |
-          cordova prepare
           cordova platform add android
       - name: Build APK
         script: |
@@ -37,24 +36,13 @@ workflows:
       #       -v 4 \
       #       platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk \
       #       app-release.apk
-      # - name: Upload APK
-        # script: |
-        #   cp -f /Users/builder/clone/platforms/android/app/build/outputs/apk/debug/app-debug.apk /Users/builder/clone/
-        #   # gh auth login --with-token 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 
-        #   # git add .
-        #   # git commit -m "Added configuration changes"
-        #   # git push
-        #   echo "Deploying app to Codemagic..."
-        #   curl -v -X POST \
-        #     -F "file=/Users/builder/clone/platforms/android/app/build/outputs/apk/debug/app-debug.apk" \
-        #     -H "x-auth-token: _DhglVXCrmkGEuyzGv8KTSV0KCVnSHXwXFAdG87ccrY" \
-        #     -H "content-type: multipart/form-data" \
-        #     https://api.codemagic.io/artifacts/upload
+      - name: Upload APK
+        script: |
+          echo "Deploying app to Codemagic..."
+          curl -v -X POST \
+            -F "file=/Users/builder/clone/platforms/android/app/build/outputs/apk/debug/app-debug.apk" \
+            -H "x-auth-token: $CM_API_TOKEN" \
+            -H "content-type: multipart/form-data" \
+            https://api.codemagic.io/artifacts/upload
     artifacts:
-      - /Users/builder/clone/platforms/android/app/build/outputs/apk/debug/app-debug.apk
-    publishing: 
-      email:
-        recipients:
-          - lagustinus211@gmail.com
-          # - louwissteffo@gmail.com
-          # - alvina.manggar@gmail.com
+      - app-release.apk
