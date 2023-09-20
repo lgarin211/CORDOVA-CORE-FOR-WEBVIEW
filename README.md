@@ -5,85 +5,90 @@
 [![Java](https://img.shields.io/badge/version-11.0.20-red)](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 [![Android Tools](https://img.shields.io/badge/API%20Level-33-important)](https://developer.android.com/studio/command-line/sdkmanager)
 
-## Daftar Isi
+## Table of Contents
 
-1. [Pengenalan](#pengenalan)
-   - [Tentang Android](#tentang-android)
-   - [Tentang Codemagic](#tentang-codemagic)
-   - [Tentang Cordova](#tentang-cordova)
-   - [Tentang Github](#tentang-github)
+1. [Introduction](#introduction)
+   - [About Android](#about-android)
+   - [About Codemagic](#about-codemagic)
+   - [About Cordova](#about-cordova)
+   - [About Github](#about-github)
+   
+2. [Installation and Setup On Your Machine](#installation-and-setup-on-your-machine)
+3. [Registration, Installation and Setup On Codemagic](#registration,-installation-and-setup-on-codemagic)
+4. [Application Usage](#application-usage)
+5. [Changing Configuration On Codemagic and Your Computer](#changing-configuration-on-codemagic-and-your-computer)
+6. [About the Developer](#about-the-developer)
 
-- [Instalasi dan Setup Pada Komputer](#instalasi-dan-setup-pada-komputer)
-- [Registrasi,Instalasi dan Setup Pada Codemagic](#registrasi-instalasi-dan-setup-pada-codemagic)
-- [Penggunaan Aplikasi](#penggunaan-aplikasi)
-- [Mengubah Configurasi Pada Codemagic dan Komputer](#mengubah-configurasi-pada-codemagic-dan-komputer)
-- [Tentang Developer](#tentang-developer)
-
-## Pengenalan
-
----
-
-Project ini menggunakan Codemagic sebagai CI/CD untuk melakukan proses build dan distribusi aplikasi Android secara otomatis. Skrip build disediakan dalam format file `.yaml`.
-
-### Tentang Android
-
-Android adalah sistem operasi berbasis Linux yang dirancang untuk perangkat bergerak layar sentuh seperti telepon pintar dan komputer tablet. Android awalnya dikembangkan oleh Android, Inc., dengan dukungan finansial dari Google, yang kemudian membelinya pada tahun 2005.
-
-### Tentang Codemagic
-
-Codemagic adalah alat CI/CD yang menjadi pilihan yang baik bagi pengembang Flutter. Tidak hanya mengurangi waktu konfigurasi CI/CD untuk Flutter, tetapi juga memberikan host berfitur lengkap untuk aplikasi Anda. Codemagic memiliki kemampuan untuk menguji, membangun, dan meluncurkan aplikasi Flutter dengan satu klik atau satu perintah dari baris perintah Anda.
-
-### Tentang Cordova
-
-Cordova adalah platform untuk membangun aplikasi mobile native menggunakan HTML, CSS dan JavaScript. Ini adalah platform yang melibatkan aplikasi web yang telah dikemas untuk distribusi lokal dan memiliki akses ke API perangkat asli.
-
-### Tentang Github
-
-Github adalah layanan hosting web berbasis Git untuk proyek pengembangan perangkat lunak yang menggunakan sistem pengawasan revisi Git. Github menawarkan semua distribusi manajemen revisi dan sumber kode fungsi Git serta fitur tambahannya sendiri.
-
-## Instalasi dan Setup Pada Komputer
+## Introduction
 
 ---
 
-Untuk menggunakan project ini, lakukan langkah-langkah berikut ini:
+This project uses Codemagic as a CI/CD to automate the build and distribution process of Android applications. The build script is provided in `.yaml` file format.
 
-- Clone repository ini.
+
+### About Android
+
+Android is a Linux-based operating system designed for touchscreen mobile devices such as smartphones and tablet computers. Android was initially developed by Android, Inc., with financial backing from Google, which later bought it in 2005.
+
+
+### About Codemagic
+
+Codemagic is a CI/CD tool that is a good choice for Flutter developers. It not only reduces CI/CD configuration time for Flutter, but also provides a feature-rich host for your application. Codemagic has the capability to test, build, and launch Flutter applications with a single click or one command from your command line.
+
+
+### About Cordova
+
+Cordova is a platform for building native mobile applications using HTML, CSS, and JavaScript. It is a platform involving web applications that have been packaged for local distribution and have access to native device APIs.
+
+
+### About Github
+
+Github is a Git-based web hosting service for software development projects that use the Git revision monitoring system. Github offers all of Git's distributedrevision management and source code functions as well as its own added features.
+
+
+## Installation and Setup On Your Machine
+
+---
+
+To use this project, follow these steps:
+
+- Clone this repository.
   ```
   git clone https://github.com/lgarin211/CORDOVA-CORE-FOR-WEBVIEW
   ```
-- Pastikan Anda menggunakan versi terbaru dari `node`, `java`, dan `android`. Selanjutnya, instal dependensi menggunakan npm.
+- Make sure you are using the latest version of `node`, `java`, and `android`. Then, install the dependencies using npm.
   ```
   npm install
   npm ci
   ```
-- Instalasi SDKMAN, Java dan Gradle
+- Install SDKMAN, Java, and Gradle.
   ```
   curl -s "https://get.sdkman.io" | bash
   source "$HOME/.sdkman/bin/sdkman-init.sh"
   sdk install java 11.0.20-amzn
   sdk install gradle 7.1.1
   ```
-- [Instalasi Android Studio](https://developer.android.com/studio) dan Android Tools API level 33.
+- Install [Android Studio](https://developer.android.com/studio) and Android Tools API level 33.
 
-## Registrasi,Instalasi dan Setup Pada Codemagic
-
----
-
-- [Registrasi dan masuk ke Codemagic](https://codemagic.io/start/)
-- Pilih project Anda di Github dan pilih opsi untuk setup `.yaml` secara manual.
-- Salin dan tempek codemagic.yaml dari repository Anda ke editor konfigurasi dari project di Codemagic.
-- Pada bagian environment variabels, tambahkan variabel baru dengan nama `CM_API_TOKEN` dan isi dengan token API Codemagic Anda.
-
-## Penggunaan Aplikasi
+## Registration, Installation and Setup On Codemagic
 
 ---
 
-- Menambahkan platform android untuk aplikasi dengan perintah `cordova platform add android`.
-- Membuat keystore dengan perintah berikut, ganti `CUSTEM` dengan nama alias key Anda dan `@CUSTEM211` dengan password yang Anda inginkan.
+- [Register and log in to Codemagic](https://codemagic.io/start/)
+- Select your project on Github and choose the option to manually set up the `.yaml`.
+- Copy and paste `codemagic.yaml` from your repository to the configuration editor of the project on Codemagic.
+- In the environment variables section, add a new variable called `CM_API_TOKEN` and populate it with your Codemagic API token.
+
+## Application Usage
+
+---
+
+- Add the android platform for the application with the command `cordova platform add android`.
+- Generate a keystore using the following command, replace `CUSTEM` with your key alias name and `@CUSTEM211` with your desired password.
   ```
   keytool -genkeypair -v -keystore CUSTEM.keystore -storepass @CUSTEM211 -keyalg RSA -keysize 2048 -validity 10001 -alias Dcustem -storetype PKCS12 -dname "CN=Custem, OU=Custem2, O=Custem3, L=Custem3, ST=java, C=id"
   ```
-- Build Bundle dan APK
+- Build Bundle and APK
   ```
   cordova build android --release -- --keystore=./CUSTEM.keystore --storePassword=@CUSTEM211 --alias=Dcustem --password=@CUSTEM211 --packageType=bundle
   ```
@@ -91,21 +96,22 @@ Untuk menggunakan project ini, lakukan langkah-langkah berikut ini:
   cordova build android --release -- --keystore=./CUSTEM.keystore --storePassword=@CUSTEM211 --alias=Dcustem --password=@CUSTEM211 --packageType=apk
   ```
 
-## Mengubah Configurasi Pada Codemagic dan Komputer
+
+## Changing Configuration On Codemagic and Your Computer
 
 ---
 
-Anda bisa mengubah konfigurasi build dengan mengubah workflow pada `codemagic.yaml`, atau langsung di UI pengaturan Codemagic.
+You can change the build configuration by updating the workflow in the `codemagic.yaml` and `config.xml` file, or directly in the Codemagic configuration UI.
 
-## Tentang Developer
+## About the Developer
 
 ---
 
-![Profil Picture](https://lgarin211.github.io/assets/img/profile-img.jpg)
+![Profile Picture](https://lgarin211.github.io/assets/img/profile-img.jpg)
 
-Nama : Agustinus Pardamean Lumban Tobing <br>
-Pendidikan : Computer Saince Binus Univercity <br>
-Hasil Karya : [Lihat di sini](https://lgarin211.github.io) <br>
-Akun Github : [akun github](https://github.com/lgarin211)<br>
-Hormat saya,
+Name: Agustinus Pardamean Lumban Tobing<br>
+Education: Computer Science, Binus University<br>
+Portfolio: [Click Here](https://lgarin211.github.io)<br>
+Github Account: [lgarin211](https://github.com/lgarin211)<br>
+Sincerely,
 Agustinus Pardamean Lumban Tobing
