@@ -1,16 +1,22 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.lgarin211.CoreView" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>BCD MOBILE</name>
-    <description>APLIKASI BCD MOBILE</description>
-    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
-        Apache Cordova Team
+<widget id="lgarin211.github.io" version="1.0.0" xmlns="http://www.w3.org/ns/widgets"
+    xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>YOUR APPS NAME</name>
+    <description>YOUR APPS DESCRIPTION</description>
+    <author email="lagustinus211@gmail.com" href="https://lgarin211.github.io">
+        YOUR EMAIL
     </author>
     <content src="index.html" />
-    <allow-navigation href="https://afergus.live/*" />
-    <allow-navigation href="https://*.lahoras.my.id/*" />
-    <allow-navigation href="https://*.lahoras.my.id/*" />
-    <allow-navigation href="https://demortb.lahoras.my.id/*" />
+    <allow-navigation href="https://*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <icon src="res/icon.png" />
+
+    <preference name="FadeSplashScreenDuration" value="300" />
+    <preference name="SplashShowOnlyFirstTime" value="false" />
+    <preference name="SplashScreen" value="none" />
+    <preference name="SplashScreenDelay" value="1000" />
+    <preference name="AndroidWindowSplashScreenBackground" value="#121212" />
+    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/icon.png" />
+
 </widget>

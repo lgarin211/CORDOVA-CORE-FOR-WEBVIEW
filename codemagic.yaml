@@ -1,52 +1,50 @@
 workflows:
   cordova-android:
-    name: Cordova Android Workflow by hci
+    name: Cordova Android Workflow
     environment:
       node: latest
-      # java: latest
-      # android: latest
+      java: latest
+      android: latest
     scripts:
-      - name: Install Dependencies
+      - name: Install SDK and Dependencies
         script: |
           npm install
           npm ci
           curl -s "https://get.sdkman.io" | bash
           source "$HOME/.sdkman/bin/sdkman-init.sh"
-          sdk install java 8.0.352-amzn
-          sdk install gradle
-
-
+          sdk install java 11.0.20-amzn
+          sdk install gradle 7.1.1
       - name: Add Android Platform
         script: |
           cordova platform add android
-      - name: Build APK
+      - name: Build keystore
         script: |
-          cordova build android
-      # - name: Sign APK
-      #   script: |
-      #     jarsigner \
-      #       -sigalg SHA1withRSA \
-      #       -digestalg SHA1 \
-      #       -keystore $CM_KEYSTORE_PATH \
-      #       -storepass $CM_KEYSTORE_PASSWORD \
-      #       -keypass $CM_KEY_PASSWORD \
-      #       platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk \
-      #       $CM_KEY_ALIAS
-      #     $ANDROID_HOME/build-tools/30.0.3/zipalign \
-      #       -v 4 \
-      #       platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk \
-      #       app-release.apk
+          keytool -genkeypair -v -keystore CUSTEM.keystore -storepass @CUSTEM211 -keyalg RSA -keysize 2048 -validity 10001 -alias Dcustem -storetype PKCS12 -dname "CN=Custem, OU=Custem2, O=Custem3, L=Custem3, ST=java, C=id"
+      - name: Build Bundel .adb
+        script: |
+          cordova build android --release -- --keystore=./CUSTEM.keystore --storePassword=@CUSTEM211 --alias=Dcustem --password=@CUSTEM211 --packageType=bundle
+      - name: Build Aplication .apk
+        script: |
+          cordova build android --release -- --keystore=./CUSTEM.keystore --storePassword=@CUSTEM211 --alias=Dcustem --password=@CUSTEM211 --packageType=apk
+      - name: Compress The Aplication
+        script: |
+          echo "Compresing..."
+          mkdir uploadfile
+          cp -r platforms uploadfile
+          cp -r CUSTEM.keystore uploadfile
+          zip -r ready.zip uploadfile
+          echo "get ready for upload"
       - name: Upload APK
         script: |
           echo "Deploying app to Codemagic..."
           curl -v -X POST \
-            -F "file=/Users/builder/clone/platforms/android/app/build/outputs/apk/debug/app-debug.apk" \
+            -F "file=/Users/builder/clone/ready.zip" \
             -H "x-auth-token: $CM_API_TOKEN" \
             -H "content-type: multipart/form-data" \
             https://api.codemagic.io/artifacts/upload
     artifacts:
-       - /Users/builder/clone/platforms/android/app/build/outputs/apk/debug/app-debug.apk
-    publishing: 
+      - /Users/builder/clone/ready.zip
+    publishing:
       email:
         recipients:
           - lagustinus211@gmail.com
