@@ -4,7 +4,6 @@ workflows:
     environment:
       node: latest
       java: latest
-      android: latest
     scripts:
       - name: Install SDK and Dependencies
         script: |
