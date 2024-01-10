@@ -18,7 +18,6 @@ workflows:
 
       - name: Add Android Platform
         script: |
-          cordova prepare
           cordova platform add android
       - name: Build APK
         script: |
