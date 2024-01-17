@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="lgarin211.github.io" version="1.0.0" xmlns="http://www.w3.org/ns/widgets"
+<widget id="lgarin211.poin.one" version="1.0.0" xmlns="http://www.w3.org/ns/widgets"
     xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>alex</name>
+    <name>OVB</name>
     <description>YOUR APPS DESCRIPTION</description>
     <author email="lagustinus211@gmail.com" href="https://lgarin211.github.io">
         YOUR EMAIL
     </author>
-    <content src="index.html" />
+    <content src="WelcomePage.html" />
     <allow-navigation href="https://*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

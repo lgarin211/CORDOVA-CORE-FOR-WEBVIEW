@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+  <link rel="stylesheet" href="./global.css" />
+  <link rel="stylesheet" href="./NutritionCheckScanFoodDrink1.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@600&display=swap" />
+</head>
+
+<body>
+  <div class="nutrition-check-scan-fooddri1">
+    <div class="home-indicator">
+      <div class="home-indicator-child"></div>
+    </div>
+    <div class="frame-container1">
+      <img class="top-bar-icon2" alt="" src="./public/top-bar@2x.png" />
+    </div>
+    <div class="secondary-frame">
+      <div class="primary-frame">
+        <main class="image-frame">
+          <!-- <img class="image-3-icon" alt="" src="./public/image-3@2x.png" /> -->
+          <div class="manual-input">
+            <div class="home-indicator1">
+              <div class="shape12"></div>
+              <div class="indicator"></div>
+            </div>
+            <footer class="first-sub-frame">
+              <div class="home-indicator2">
+                <div class="shape13"></div>
+                <div class="indicator"></div>
+              </div>
+            </footer>
+            <div class="second-sub-frame">
+              <img class="second-sub-frame-child" alt="" src="./public/rectangle-271.svg" />
+
+              <div class="scan-barcode">
+                <div class="you-can-also">
+                  You can also input the nutrition manually
+                </div>
+              </div>
+              <div class="parent-frame">
+                <button class="scan-barcode-input">
+                  <div class="input-nutrition">Scan Barcode</div>
+                  <img class="qr-icon" alt="" src="./public/qr.svg" />
+                </button>
+                <button class="scan-barcode-input1" id="scanBarcodeInput1">
+                  <div class="input-nutrition">Input Nutrition</div>
+                  <img class="barcode-icon" alt="" src="./public/barcode.svg" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="nutrition-check-scan-fooddri-child"></div>
+    <div class="third-frame">
+      <div class="subtract-component">
+        <img class="subtract-icon" alt="" />
+
+        <img class="subtract-component-child" loading="eager" alt="" src="./public/group-10.svg" id="group" />
+
+        <img class="frame-placeholder-icon" loading="eager" alt="" src="./public/frame-42732077911.svg" />
+      </div>
+      <div class="empty-frame" id="emptyFrameContainer">
+        <img class="last-frame-icon" loading="eager" alt="" src="./public/frame-427320779.svg" />
+
+        <img class="last-frame-icon" alt="" src="./public/frame-427320779-2.svg" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var scanBarcodeInput1 = document.getElementById("scanBarcodeInput1");
+    if (scanBarcodeInput1) {
+      scanBarcodeInput1.addEventListener("click", function (e) {
+        window.location.href = "./NutritionCheckScanBarcode.html";
+      });
+    }
+
+    var group = document.getElementById("group");
+    if (group) {
+      group.addEventListener("click", function (e) {
+        window.location.href = "./NutritionCheckScanFoodDrink.html";
+      });
+    }
+
+    var emptyFrameContainer = document.getElementById("emptyFrameContainer");
+    if (emptyFrameContainer) {
+      emptyFrameContainer.addEventListener("click", function (e) {
+        window.location.href = "./HomePage.html";
+      });
+    }
+  </script>
+</body>
+
+</html>

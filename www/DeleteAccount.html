@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./DeleteAccount.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@600&display=swap"
+    />
+  </head>
+  <body>
+    <div class="delete-account">
+      <header class="shape14">
+        <div class="shape-inner1">
+          <div class="frame-parent5">
+            <img class="frame-icon" loading="eager" alt="" />
+
+            <b class="healtie4">Healtie</b>
+          </div>
+        </div>
+        <div class="shape15"></div>
+        <div class="shape16"></div>
+      </header>
+      <div class="delete-account-wrapper">
+        <div class="delete-account1">Delete Account</div>
+      </div>
+      <section class="deleting-your-account-is-a-per-parent">
+        <div class="deleting-your-account">
+          Deleting your account is a permanent action and cannot be undone.
+        </div>
+        <div class="content">
+          <div class="input-fields">
+            <div class="password">
+              <div class="input-password">Input Password</div>
+              <div class="input-field">
+                <div class="content1">
+                  <input
+                    class="enter-text-here"
+                    placeholder="newpassword1233#@"
+                    type="text"
+                  />
+
+                  <div class="iconsvisibility">
+                    <div class="eye">
+                      <img
+                        class="vector-icon"
+                        alt=""
+                        src="./public/vector.svg"
+                      />
+
+                      <div class="vector"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="button-wrapper">
+            <div class="button" id="buttonContainer">
+              <div class="sign-in">Delete</div>
+            </div>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      var buttonContainer = document.getElementById("buttonContainer");
+      if (buttonContainer) {
+        buttonContainer.addEventListener("click", function (e) {
+          window.location.href = "./WelcomePage.html";
+        });
+      }
+    </script>
+  </body>
+</html>

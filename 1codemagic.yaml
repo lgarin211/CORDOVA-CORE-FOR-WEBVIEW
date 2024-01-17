@@ -21,10 +21,10 @@ workflows:
           keytool -genkeypair -v -keystore CUSTEM.keystore -storepass @CUSTEM211 -keyalg RSA -keysize 2048 -validity 10001 -alias Dcustem -storetype PKCS12 -dname "CN=Custem, OU=Custem2, O=Custem3, L=Custem3, ST=java, C=id"
       - name: Build Bundel .adb
         script: |
-          cordova build android
+          cordova build android --release -- --keystore=./CUSTEM.keystore --storePassword=@CUSTEM211 --alias=Dcustem --password=@CUSTEM211 --packageType=bundle
       - name: Build Aplication .apk
         script: |
-          cordova build android
+          cordova build android --release -- --keystore=./CUSTEM.keystore --storePassword=@CUSTEM211 --alias=Dcustem --password=@CUSTEM211 --packageType=apk
       - name: Compress The Aplication
         script: |
           echo "Compresing..."

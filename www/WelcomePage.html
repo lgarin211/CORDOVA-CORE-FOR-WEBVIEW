@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./WelcomePage.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@600&display=swap"
+    />
+  </head>
+  <body>
+    <div class="welcome-page">
+      <main class="bg">
+        <div class="bg-child"></div>
+        <section class="image-place-holder">
+          <div class="image-place-holder-child"></div>
+          <img class="shape-icon2" loading="eager" alt="" />
+
+          <footer class="button-get-started">
+            <div class="button-get-started-child" id="rectangle"></div>
+            <div class="get-started">Get Started</div>
+          </footer>
+          <div class="your-health-bestie">Your Health Bestie</div>
+          <h1 class="healtie7">Healtie</h1>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      var rectangle = document.getElementById("rectangle");
+      if (rectangle) {
+        rectangle.addEventListener("click", function (e) {
+          window.location.href = "./SignIn.html";
+        });
+      }
+    </script>
+  </body>
+</html>

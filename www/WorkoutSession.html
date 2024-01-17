@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./WorkoutSession.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@600&display=swap"
+    />
+  </head>
+  <body>
+    <div class="workout-session">
+      <section class="frame-section">
+        <div class="frame-wrapper1" id="frameContainer">
+          <img
+            class="frame-child17"
+            loading="eager"
+            alt=""
+            src="./public/frame-4273207793.svg"
+          />
+        </div>
+        <div class="ellipse-wrapper">
+          <div class="frame-child18"></div>
+        </div>
+        <div class="full-body-warm-up-wrapper">
+          <div class="full-body-warm">Full Body Warm Up</div>
+        </div>
+      </section>
+      <section class="workout-session-inner">
+        <div class="frame-wrapper2">
+          <div class="ellipse-parent4">
+            <div class="frame-child19"></div>
+            <img class="grousdp-1-icon" loading="eager" alt="" />
+          </div>
+        </div>
+      </section>
+      <div class="full-body-warm-up-wrapper">
+        <b class="b">02:22</b>
+      </div>
+      <section class="full-body-warm-up-wrapper">
+        <div class="buttons-frame">
+          <div class="buttons-wrapper">
+            <div class="buttons">
+              <button class="button2">
+                <div class="sign-in2">Restart</div>
+              </button>
+              <button class="button3">
+                <div class="sign-in3">Pause</div>
+              </button>
+            </div>
+          </div>
+          <button class="button4" id="button2">
+            <div class="sign-in4">Play Music</div>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      var frameContainer = document.getElementById("frameContainer");
+      if (frameContainer) {
+        frameContainer.addEventListener("click", function (e) {
+          window.location.href = "./HomePage.html";
+        });
+      }
+
+      var button2 = document.getElementById("button2");
+      if (button2) {
+        button2.addEventListener("click", function (e) {
+          // Please sync "Exercise Complete" to the project
+        });
+      }
+    </script>
+  </body>
+</html>
