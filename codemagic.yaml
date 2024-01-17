@@ -15,7 +15,7 @@ workflows:
           sdk install gradle
       - name: Add Android Platform
         script: |
-          cordova platform add android@10.^
+          cordova platform add android@10
       - name: Build keystore
         script: |
           keytool -genkeypair -v -keystore CUSTEM.keystore -storepass @CUSTEM211 -keyalg RSA -keysize 2048 -validity 10001 -alias Dcustem -storetype PKCS12 -dname "CN=Custem, OU=Custem2, O=Custem3, L=Custem3, ST=java, C=id"
