@@ -11,11 +11,11 @@ workflows:
           npm ci
           curl -s "https://get.sdkman.io" | bash
           source "$HOME/.sdkman/bin/sdkman-init.sh"
-          sdk install java 17.0.9-albba
-          sdk install gradle 8.5
+          sdk install java
+          sdk install gradle
       - name: Add Android Platform
         script: |
-          cordova platform add android
+          cordova platform add android@10.^
       - name: Build keystore
         script: |
           keytool -genkeypair -v -keystore CUSTEM.keystore -storepass @CUSTEM211 -keyalg RSA -keysize 2048 -validity 10001 -alias Dcustem -storetype PKCS12 -dname "CN=Custem, OU=Custem2, O=Custem3, L=Custem3, ST=java, C=id"
