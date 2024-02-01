@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="utf-8" />
+  <title>Page Title</title>
+
+  <body>
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph.</p>
+    <p>This is a another paragraph.</p>
+
+    <h1>
+      <iconify-icon
+        icon="material-symbols:10k-rounded"
+        style="color: #ea1a1a"
+      ></iconify-icon>
+    </h1>
+    <span>
+      <iconify-icon
+        icon="cryptocurrency:cdn"
+        style="color: #ea1a1a"
+      ></iconify-icon>
+    </span>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDvyWqACW9TMGoW4qpwsPzbDFB3boDdsyw",
+        authDomain: "enpoinherru.firebaseapp.com",
+        projectId: "enpoinherru",
+        storageBucket: "enpoinherru.appspot.com",
+        messagingSenderId: "132748905907",
+        appId: "1:132748905907:web:d8c322c31fe38a61970fc6",
+        measurementId: "G-PMQ44KDBG4",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+  </body>
+</html>

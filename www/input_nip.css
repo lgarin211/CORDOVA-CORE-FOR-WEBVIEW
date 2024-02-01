@@ -1,0 +1,122 @@
+/* DIPAKE DI : 
+    input_nip
+    sign_up2 
+    
+*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.container-fluid{
+    justify-content: center;
+    text-align: center;
+    padding-top: 150px;
+    font-family: 'Poppins';
+}
+
+h2{
+    font-family: 'Rozha One';
+    font-size: 22px;
+}
+
+
+p{
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+
+.formnya{
+    margin-top: 145px;
+    display: grid;
+    justify-content: center;
+}
+
+.mb-3 input[type="number"]{
+    width: 291px;
+    background-color: #F1F1F5;
+    color: black;
+}
+
+    .mb-3 input[type="number"]::placeholder{
+        color: #D6D6D6;
+    }
+
+.mb-3 input[type="tel"]{
+    width: 310px;
+    background-color: #F1F1F5;
+    color: black;
+}
+
+    .mb-3 input[type="tel"]::placeholder{
+        color: #D6D6D6;
+    }
+
+.mb-3 input[type="text"]{
+    width: 310px;
+    background-color: #F1F1F5;
+    color: black;
+}
+
+    .mb-3 input[type="text"]::placeholder{
+        color: #D6D6D6;
+    }
+
+.mb-3 input[type="email"]{
+width: 310px;
+background-color: #F1F1F5;
+color: black;
+}
+
+    .mb-3 input[type="email"]::placeholder{
+        color: #D6D6D6;
+    }
+
+.mb-3 input[type="password"]{
+    width: 310px;
+    background-color: #F1F1F5;
+    color: black;
+}
+
+    .mb-3 input[type="password"]::placeholder{
+        color: #D6D6D6;
+    }
+
+.d-grid{
+    margin-top: 84px;
+    display: flex;
+    justify-content: center;
+}
+
+button[type="button"]{
+    width: 255px;
+    background-color: #348AFA;
+    border-color: #348AFA;
+    border-radius: 20px;
+}
+
+.needhelp{
+    color: black;
+    margin-top: 25px;
+    font-size: 12px;
+}
+
+.text-danger{
+    text-align: left;
+    font-size: 14px;
+}
+
+.hide{
+    display: none;
+  }
+
+.circle{
+    height: 100vh;
+    width: 100vw;
+    background-image: radial-gradient(circle at top, rgba(100, 165, 249, 60%),white 45%);
+    position: absolute;
+    z-index: -1;
+}
